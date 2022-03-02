@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent docker {image 'node:20.10.12'}
 
     stages {
         stage ('Compile Stage') {
@@ -17,6 +17,10 @@ pipeline {
                 withMaven(maven : 'M3') {
                     bat 'mvn test'
                 }
+            }
+
+            steps{
+                bat 'node --version'
             }
         }
 
