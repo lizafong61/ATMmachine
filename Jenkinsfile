@@ -20,10 +20,6 @@ pipeline {
                     bat 'mvn test'
                 }
             }
-
-            steps{
-                bat 'node --version'
-            }
         }
 
 
