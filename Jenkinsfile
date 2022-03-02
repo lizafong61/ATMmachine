@@ -1,5 +1,7 @@
 pipeline {
-    agent docker {image 'node:20.10.12'}
+    agent {
+        docker {image 'node:20.10.12'}
+    }
 
     stages {
         stage ('Compile Stage') {
