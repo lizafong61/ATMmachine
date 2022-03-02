@@ -1,9 +1,13 @@
 pipeline {
-    agent {
-        docker {image 'node:16.13.1-alpine'}
-    }
+    agent any
 
     stages {
+        stage('Build'){
+            steps{
+                bat 'mvn --version'
+            }
+        }
+
         stage ('Compile Stage') {
 
             steps {
